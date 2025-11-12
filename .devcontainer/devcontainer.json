@@ -1,0 +1,80 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
+{
+	"name": "Python 3",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/python:3.11-bookworm",
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+		"ghcr.io/devcontainers-extra/features/bash-command:1": {
+			"command": "sed -i 's/deb.debian.org/mirrors.aliyun.com/g' /etc/apt/sources.list.d/debian.sources"
+		}
+	},
+
+	"remoteEnv": {
+		"PIP_INDEX_URL": "https://pypi.tuna.tsinghua.edu.cn/simple"
+	},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	
+	"onCreateCommand": "pipx install uv",
+	
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "test -f pyproject.toml && uv sync",
+
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"terminal.integrated.defaultProfile.linux": "zsh",
+				"terminal.integrated.defaultProfile.osx": "zsh",
+				"terminal.integrated.defaultProfile.windows": "zsh",
+				"python.languageServer": "Pylance",
+				"python.defaultInterpreterPath": "${workspaceFolder}/.venv",
+				"python.poetryPath": "/usr/local/py-utils/bin/poetry",
+				"python.terminal.activateEnvironment": true,
+				"python.analysis.diagnosticMode": "workspace",
+				"python.analysis.typeCheckingMode": "strict",
+				"python.analysis.completeFunctionParens": false,
+				"python.analysis.autoSearchPaths": true,
+				"python.analysis.autoImportCompletions": true,
+				"python.analysis.useLibraryCodeForTypes": true,
+				"python.analysis.cachingLevel": "Library",
+				"python.analysis.memory.keepLibraryAst": true,
+				"python.analysis.memory.keepLibraryLocalVariables": true,
+				"python.analysis.diagnosticSeverityOverrides": {
+					"reportUnknownVariableType": "none",
+					"reportUnknownArgumentType": "none",
+					"reportUnknownLambdaType": "none",
+					"reportUnknownMemberType": "none",
+					"reportUnknownParameterType": "none",
+					"reportMissingParameterType": "none",
+					"reportMissingTypeArgument": "none",
+					"reportMissingTypeStubs": "none"
+				},
+				"[python]": {
+					"editor.formatOnSave":  true,
+					"editor.defaultFormatter": "charliermarsh.ruff",
+					"editor.codeActionsOnSave": {
+						"source.fixAll": "explicit",
+						"source.organizeImports": "explicit"
+					}
+				}
+			},
+			"extensions": [
+				"oderwat.indent-rainbow",
+				"k--kato.intellij-idea-keybindings",
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"charliermarsh.ruff",
+				"njpwerner.autodocstring",
+				"tamasfe.even-better-toml"
+			]
+		}
+	},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	"remoteUser": "vscode"
+}
