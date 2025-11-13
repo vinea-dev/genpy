@@ -13,5 +13,7 @@ class EchoRequest(_message.Message):
 class EchoResponse(_message.Message):
     __slots__ = ()
     ID_FIELD_NUMBER: _ClassVar[int]
+    MESSAGE_FIELD_NUMBER: _ClassVar[int]
     id: str
-    def __init__(self, id: _Optional[str] = ...) -> None: ...
+    message: str
+    def __init__(self, id: _Optional[str] = ..., message: _Optional[str] = ...) -> None: ...

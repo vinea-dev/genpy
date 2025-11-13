@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x66oobar/v1alpha1/foobar.proto\x12\x0f\x66oobar.v1alpha1\"\x1d\n\x0b\x45\x63hoRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"\x1e\n\x0c\x45\x63hoResponse\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id2R\n\tFoobarAPI\x12\x45\n\x04\x45\x63ho\x12\x1c.foobar.v1alpha1.EchoRequest\x1a\x1d.foobar.v1alpha1.EchoResponse\"\x00\x42\x35P\x01Z1github.com/vinea-dev/gengo/foobar/v1alpha1;foobarb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x66oobar/v1alpha1/foobar.proto\x12\x0f\x66oobar.v1alpha1\"\x1d\n\x0b\x45\x63hoRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"8\n\x0c\x45\x63hoResponse\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message2R\n\tFoobarAPI\x12\x45\n\x04\x45\x63ho\x12\x1c.foobar.v1alpha1.EchoRequest\x1a\x1d.foobar.v1alpha1.EchoResponse\"\x00\x42\x35P\x01Z1github.com/vinea-dev/gengo/foobar/v1alpha1;foobarb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,7 +35,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_ECHOREQUEST']._serialized_start=49
   _globals['_ECHOREQUEST']._serialized_end=78
   _globals['_ECHORESPONSE']._serialized_start=80
-  _globals['_ECHORESPONSE']._serialized_end=110
-  _globals['_FOOBARAPI']._serialized_start=112
-  _globals['_FOOBARAPI']._serialized_end=194
+  _globals['_ECHORESPONSE']._serialized_end=136
+  _globals['_FOOBARAPI']._serialized_start=138
+  _globals['_FOOBARAPI']._serialized_end=220
 # @@protoc_insertion_point(module_scope)

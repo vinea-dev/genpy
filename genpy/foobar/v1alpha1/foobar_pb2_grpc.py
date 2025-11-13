@@ -6,7 +6,7 @@ from foobar.v1alpha1 import foobar_pb2 as foobar_dot_v1alpha1_dot_foobar__pb2
 
 
 class FoobarAPIStub(object):
-    """FoobarAPI
+    """FoobarAPI is a simple example service.
     """
 
     def __init__(self, channel):
@@ -23,11 +23,12 @@ class FoobarAPIStub(object):
 
 
 class FoobarAPIServicer(object):
-    """FoobarAPI
+    """FoobarAPI is a simple example service.
     """
 
     def Echo(self, request, context):
-        """comments.
+        """Echo is a simple RPC that echoes the request ID in the response,
+        along with a message.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -50,7 +51,7 @@ def add_FoobarAPIServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class FoobarAPI(object):
-    """FoobarAPI
+    """FoobarAPI is a simple example service.
     """
 
     @staticmethod
